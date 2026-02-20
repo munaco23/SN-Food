@@ -2,6 +2,7 @@
   "name": "grocery-website",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://munaco23.github.io/SN-Food",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
