@@ -1,0 +1,184 @@
+.na-grid-sec {
+  width: 100%;
+  background: #ffffff;
+  padding-bottom: 120px;
+}
+
+.na-grid-inner {
+  width: 100%;
+}
+
+.na-cat-section {
+  margin-bottom: 24px;
+}
+
+.na-cat-header {
+  width: 100%;
+  padding: 18px 1%;
+  color: #ffffff;
+  box-sizing: border-box;
+}
+
+.na-cat-header-inner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.na-cat-header-inner i {
+  font-size: 24px;
+}
+
+.na-cat-title {
+  margin: 0;
+  font-family: var(--font-montserrat);
+  font-size: 38px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.na-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px 20px;
+  background: #ffffff;
+  padding: 30px 1%;
+  margin-top: 24px;
+}
+
+.na-card {
+  background: #ffffff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 1px solid #cecece91;
+  transition: all 0.2s ease;
+  border-radius: 7px;
+}
+
+.na-card:hover {
+  z-index: 2;
+
+}
+
+.na-card-top {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  margin-bottom: 16px;
+}
+
+.na-card-wish {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  color: var(--navy-blue);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.na-card-add {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--navy-blue);
+  border: none;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1;
+  transition: transform 0.2s ease;
+}
+
+.na-card-add:hover {
+  transform: scale(1.1);
+}
+
+.na-card-img {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.na-card-img img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.na-card-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.na-card-name {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.4;
+  height: 36px;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+
+.na-card-code {
+  margin: 8px 0 2px;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.na-card-brand {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 11px;
+  color: #6b7280;
+  margin-bottom: 10px;
+}
+
+.na-card-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  background: #f9fafb;
+  border: 1px solid #f3f4f6;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #111827;
+  width: fit-content;
+}
+
+@media (max-width: 1100px) {
+  .na-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .na-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .na-cat-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .na-grid {
+    grid-template-columns: 1fr;
+  }
+}

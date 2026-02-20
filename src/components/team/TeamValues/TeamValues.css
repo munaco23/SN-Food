@@ -1,0 +1,60 @@
+.team-vals {
+  width: 100%;
+  padding: 84px 0;
+  background: #ffffff;
+}
+
+.team-vals-inner {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 1%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: flex-start;
+}
+
+.team-vals-title {
+  margin: 0;
+  font-family:var(--font-montserrat);
+  font-size: clamp(32px, 3vw, 52px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: #111827;
+  line-height: 1.1;
+}
+
+.team-vals-sub {
+  margin: 28px 0 32px;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: #111827;
+}
+
+.team-vals-text p {
+  margin: 0 0 20px;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(17, 24, 39, 0.82);
+}
+
+.team-vals-image {
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.team-vals-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 980px) {
+  .team-vals-inner {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+}

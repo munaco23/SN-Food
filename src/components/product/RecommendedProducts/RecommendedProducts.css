@@ -1,0 +1,147 @@
+.rp-sec {
+  width: 100%;
+  background: #ffffff;
+  padding: 64px 0;
+}
+
+.rp-inner {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 5%;
+}
+
+.rp-group {
+  margin-bottom: 84px;
+}
+
+.rp-main-title {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 32px;
+}
+
+.rp-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+}
+
+.rp-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #f3f4f6;
+  border-radius: 8px;
+  padding: 16px;
+  transition: all 0.2s ease;
+}
+
+.rp-card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  transform: translateY(-4px);
+}
+
+.rp-card-top {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rp-card-top img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.rp-wish {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #84bc22;
+  cursor: pointer;
+}
+
+.rp-add {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #84bc22;
+  color: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.rp-card-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.rp-name {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 800;
+  color: #111827;
+  line-height: 1.4;
+  height: 36px;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+
+.rp-code {
+  margin: 8px 0 2px;
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.rp-brand {
+  margin: 0 0 10px;
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.rp-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  background: #f9fafb;
+  border: 1px solid #f3f4f6;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #111827;
+  width: fit-content;
+}
+
+@media (max-width: 1200px) {
+  .rp-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 920px) {
+  .rp-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .rp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .rp-grid {
+    grid-template-columns: 1fr;
+  }
+}

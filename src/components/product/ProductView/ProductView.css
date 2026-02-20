@@ -1,0 +1,292 @@
+.pv-container {
+  width: 100%;
+  background: #ffffff;
+  padding: 24px 0 64px;
+}
+
+.pv-inner {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 5%;
+}
+
+.pv-breadcrumbs {
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 32px;
+}
+
+.pv-breadcrumbs span {
+  cursor: pointer;
+}
+
+.pv-breadcrumbs .active {
+  color: #84bc22;
+  font-weight: 600;
+}
+
+.pv-main-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 42px;
+  align-items: start;
+}
+
+.pv-image-box {
+  width: 100%;
+  aspect-ratio: 1;
+  border: 1px solid #f3f4f6;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.pv-image-box img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.pv-title {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-size: clamp(24px, 3vw, 42px);
+  font-weight: 900;
+  color: #111827;
+  line-height: 1.1;
+}
+
+.pv-cod {
+  margin: 12px 0 32px;
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+.pv-info-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pv-info-table tr {
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.pv-info-table td {
+  padding: 14px 0;
+  font-size: 14px;
+  color: #111827;
+  font-weight: 600;
+}
+
+.pv-info-table .pv-link {
+  color: #f4c550;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.pv-right {
+  background: #ffffff;
+  padding: 0;
+}
+
+.pv-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.pv-wish-icon {
+  font-size: 20px;
+  color: #84bc22;
+  cursor: pointer;
+}
+
+.pv-available {
+  font-size: 13px;
+  color: #111827;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pv-available .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #84bc22;
+}
+
+.pv-cart-box {
+  border: 1px solid #f3f4f6;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+
+.pv-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.pv-field label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #374151;
+}
+
+.pv-select {
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #ffffff;
+  font-weight: 600;
+}
+
+.pv-qty-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 24px;
+}
+
+.pv-qty-control {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #f9fafb;
+  border-radius: 999px;
+  padding: 4px 12px;
+}
+
+.pv-qty-control button {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: #f4c550;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.pv-qty-control span {
+  font-weight: 800;
+  font-size: 16px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.pv-add-btn {
+  width: 100%;
+  height: 52px;
+  background: #84bc22;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.pv-add-btn:hover {
+  background: #73a41d;
+}
+
+.pv-meta {
+  padding-bottom: 24px;
+  border-bottom: 1px solid #f3f4f6;
+  margin-bottom: 24px;
+}
+
+.pv-meta p {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0 0 12px;
+}
+
+.pv-barcode {
+  font-size: 42px;
+  letter-spacing: 2px;
+  color: #111827;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pv-barcode span {
+  font-size: 10px;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.pv-brand-owner {
+  font-weight: 700;
+  color: #111827 !important;
+}
+
+.pv-brand-logo-small {
+  width: 64px;
+  margin-top: 8px;
+}
+
+.pv-brand-logo-small img {
+  width: 100%;
+  height: auto;
+}
+
+.pv-delivery {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.pv-delivery i {
+  font-size: 20px;
+  color: #111827;
+}
+
+.pv-delivery span {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.pv-origin p {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 12px;
+}
+
+.pv-ft-logo {
+  width: 120px;
+}
+
+.pv-ft-logo img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1024px) {
+  .pv-main-content {
+    grid-template-columns: 1fr 1fr;
+  }
+  .pv-right {
+    grid-column: span 2;
+    margin-top: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pv-main-content {
+    grid-template-columns: 1fr;
+  }
+  .pv-right {
+    grid-column: span 1;
+  }
+}

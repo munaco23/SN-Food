@@ -1,0 +1,299 @@
+.fs {
+  width: 100%;
+  position: relative;
+  background-image: var(--fs-bg);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.fs::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.18) 0%, rgba(17, 24, 39, 0.24) 55%, rgba(17, 24, 39, 0.30) 100%);
+  pointer-events: none;
+}
+
+.fs-hero {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  overflow: hidden;
+}
+
+.fs-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(17, 24, 39, 0.70) 0%, rgba(17, 24, 39, 0.35) 55%, rgba(17, 24, 39, 0.10) 100%);
+}
+
+.fs-hero-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 96px 1% 150px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.fs-hero-left {
+  color: #ffffff;
+  max-width: 760px;
+}
+
+.fs-title {
+  margin: 0;
+  font-family: var(--font-montserrat);
+  font-size: clamp(40px, 5.4vw, 124px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+  width: 80%;
+}
+
+.fs-text {
+  margin: 18px 0 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+  max-width: 620px;
+  opacity: 0.95;
+}
+
+.fs-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.fs-btn {
+  height: 44px;
+  padding: 0 32px;
+  border-radius: 999px;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.fs-btn--primary {
+  border: none;
+  background: #f4c550;
+  color: #24314d;
+}
+
+.fs-btn--ghost {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.75);
+}
+
+.fs-hero-right {
+  justify-self: end;
+  width: min(520px, 100%);
+  border-radius: 18px;
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #ffffff;
+}
+
+.fs-brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  padding: 0 14px;
+  border-radius: 10px;
+  border: 2px solid rgba(244, 197, 80, 0.65);
+  color: #f4c550;
+  font-weight: 900;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.fs-right-title {
+  margin-top: 12px;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.fs-right-text {
+  margin-top: 10px;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  line-height: 1.55;
+  opacity: 0.95;
+}
+
+.fs-divider {
+  height: 1px;
+  width: 100%;
+  margin: 16px 0;
+  background: rgba(255, 255, 255, 0.30);
+}
+
+.fs-right-actions {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.fs-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 38px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(36, 49, 77, 0.40);
+  color: #ffffff;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.fs-pill-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.fs-link {
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.fs-stats {
+  width: 100%;
+  background: transparent;
+  margin-top: -86px;
+  padding: 0 0 64px;
+  position: relative;
+  z-index: 3;
+}
+
+.fs-stats-inner {
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 5px;
+  padding-right: 5px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.fs-stat {
+  border-radius: 18px;
+  padding: 22px;
+  background: rgba(120, 120, 120, 0.56);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+  min-height: 220px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.fs-stat:nth-child(1) {
+  background: linear-gradient(135deg, rgba(120, 120, 120, 0.62), rgba(150, 150, 150, 0.46));
+}
+
+.fs-stat:nth-child(2) {
+  background: linear-gradient(135deg, rgba(135, 120, 110, 0.62), rgba(160, 145, 130, 0.46));
+}
+
+.fs-stat:nth-child(3) {
+  background: linear-gradient(135deg, rgba(120, 130, 125, 0.62), rgba(150, 160, 150, 0.46));
+}
+
+.fs-stat:nth-child(4) {
+  background: linear-gradient(135deg, rgba(135, 120, 125, 0.62), rgba(175, 150, 160, 0.46));
+}
+
+.fs-stat-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.22);
+  color: rgba(0, 0, 0, 0.70);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.fs-stat-title {
+  margin-top: 14px;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.fs-stat-text {
+  margin-top: 10px;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+@media (max-width: 1024px) {
+  .fs-hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .fs-hero-right {
+    justify-self: start;
+  }
+
+  .fs-stats-inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .fs-stats {
+    margin-top: -64px;
+  }
+}
+
+@media (max-width: 560px) {
+  .fs-hero {
+    min-height: 560px;
+  }
+
+  .fs-hero-inner {
+    padding: 44px 5px 110px;
+  }
+
+  .fs-right-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .fs-stats-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .fs-stats {
+    margin-top: -54px;
+  }
+  .fs-title{
+     font-size: clamp(38px, 5.5vw, 78px);
+  }
+}
