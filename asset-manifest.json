@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/SN-Food/static/css/main.babca021.css",
+    "main.css": "/SN-Food/static/css/main.799baa0d.css",
     "main.js": "/SN-Food/static/js/main.9a1d591e.js",
     "static/js/453.93ae8f5d.chunk.js": "/SN-Food/static/js/453.93ae8f5d.chunk.js",
     "static/media/Logo.jpeg": "/SN-Food/static/media/Logo.8079454beec66001188b.jpeg",
     "static/media/hero2.jpg": "/SN-Food/static/media/hero2.185efbdcd70c09712181.jpg",
     "static/media/hero1.jpg": "/SN-Food/static/media/hero1.d2f7d4b8e5f9e6620f08.jpg",
     "index.html": "/SN-Food/index.html",
-    "main.babca021.css.map": "/SN-Food/static/css/main.babca021.css.map",
+    "main.799baa0d.css.map": "/SN-Food/static/css/main.799baa0d.css.map",
     "main.9a1d591e.js.map": "/SN-Food/static/js/main.9a1d591e.js.map",
     "453.93ae8f5d.chunk.js.map": "/SN-Food/static/js/453.93ae8f5d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.babca021.css",
+    "static/css/main.799baa0d.css",
     "static/js/main.9a1d591e.js"
   ]
 }
