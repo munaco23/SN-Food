@@ -18,6 +18,22 @@
   margin-bottom: 84px;
 }
 
+@media (max-width: 768px) {
+  .c-why-head {
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 42px;
+  }
+
+  .c-why-head-left {
+    max-width: 100%;
+  }
+
+  .c-why-cta {
+    align-self: flex-start;
+  }
+}
+
 .c-why-head-left {
   max-width: 860px;
 }

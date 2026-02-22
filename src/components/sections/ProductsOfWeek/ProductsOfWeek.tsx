@@ -154,9 +154,14 @@ export const ProductsOfWeek: React.FC = () => {
     <section className="pow" aria-label="Products of the week">
       <div className="pow-header">
         <h2 className="pow-title">Products of the week</h2>
-        <button className="pow-next" type="button" aria-label="Next" onClick={() => scrollByCards('right')}>
-          <i className="fa-solid fa-chevron-right" />
-        </button>
+        <div className="pow-nav-buttons">
+          <button className="pow-nav-btn" type="button" aria-label="Previous" onClick={() => scrollByCards('left')}>
+            <i className="fa-solid fa-chevron-left" />
+          </button>
+          <button className="pow-nav-btn" type="button" aria-label="Next" onClick={() => scrollByCards('right')}>
+            <i className="fa-solid fa-chevron-right" />
+          </button>
+        </div>
       </div>
 
       <div 
@@ -169,15 +174,23 @@ export const ProductsOfWeek: React.FC = () => {
       >
         {products.map((p) => (
           <article key={p.id} className="pow-card">
-            <button className="pow-heart" type="button" aria-label="Add to wishlist">
-              <i className="fa-regular fa-heart" />
-            </button>
-            <button className="pow-plus" type="button" aria-label="Add">
-              <i className="fa-solid fa-plus" />
-            </button>
-
             <div className="pow-imageWrap">
               <img className="pow-image" src={p.imageSrc} alt={p.name} draggable="false" />
+              
+              <div className="pow-actions-sidebar">
+                <button className="pow-action-btn" aria-label="Add to wishlist">
+                  <i className="fa-regular fa-heart" />
+                </button>
+                <button className="pow-action-btn" aria-label="Add to cart">
+                  <i className="fa-solid fa-bag-shopping" />
+                </button>
+                <button className="pow-action-btn" aria-label="Compare">
+                  <i className="fa-solid fa-right-left" />
+                </button>
+                <button className="pow-action-btn" aria-label="Quick view">
+                  <i className="fa-solid fa-magnifying-glass" />
+                </button>
+              </div>
             </div>
 
             <div className="pow-body">

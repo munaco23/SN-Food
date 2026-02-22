@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './NewArrivalsGrid.css';
 import Logo from '../../../Images/Logo.jpeg';
 import { Link } from 'react-router-dom';
@@ -13,11 +14,11 @@ type Product = {
 };
 
 const CATEGORIES = [
-  { name: 'Fresh Products', color: '#f4a414', icon: 'carrot' },
-  { name: 'Assorted Flours', color: '#008b74', icon: 'wheat-awn' },
-  { name: 'Dairy', color: '#c49a6c', icon: 'cow' },
-  { name: 'Condiments', color: '#a66e4e', icon: 'bottle-droplet' },
-  { name: 'Instant Noodles', color: '#1a1a1a', icon: 'bowl-food' },
+  { key: 'fresh', name: 'Fresh Products', color: '#f4a414', icon: 'carrot' },
+  { key: 'flours', name: 'Assorted Flours', color: '#008b74', icon: 'wheat-awn' },
+  { key: 'dairy', name: 'Dairy', color: '#c49a6c', icon: 'cow' },
+  { key: 'condiments', name: 'Condiments', color: '#a66e4e', icon: 'bottle-droplet' },
+  { key: 'noodles', name: 'Instant Noodles', color: '#1a1a1a', icon: 'bowl-food' },
 ];
 
 const products: Product[] = [
@@ -39,6 +40,8 @@ const products: Product[] = [
 ];
 
 export const NewArrivalsGrid: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="na-grid-sec">
       <div className="na-grid-inner">
@@ -46,12 +49,14 @@ export const NewArrivalsGrid: React.FC = () => {
           const catProducts = products.filter(p => p.category === cat.name);
           if (catProducts.length === 0) return null;
 
+          const catLabel = t(`new_arrivals_page.categories.${cat.key}`);
+
           return (
             <div key={cat.name} className="na-cat-section">
               <header className="na-cat-header" style={{ backgroundColor: cat.color }}>
                 <div className="na-cat-header-inner">
                   <i className={`fa-solid fa-${cat.icon}`} />
-                  <h2 className="na-cat-title">{cat.name}</h2>
+                  <h2 className="na-cat-title">{catLabel}</h2>
                 </div>
               </header>
 
@@ -59,10 +64,10 @@ export const NewArrivalsGrid: React.FC = () => {
                 {catProducts.map((prod) => (
                   <Link to={`/product/${prod.id}`} key={prod.id} className="na-card" style={{ textDecoration: 'none' }}>
                     <div className="na-card-top">
-                      <button className="na-card-wish" aria-label="Add to wishlist" onClick={(e) => { e.preventDefault(); /* handle wish */ }}>
+                      <button className="na-card-wish" aria-label={t('new_arrivals_page.add_to_wishlist')} onClick={(e) => { e.preventDefault(); /* handle wish */ }}>
                         <i className="fa-regular fa-heart" />
                       </button>
-                      <button className="na-card-add" aria-label="Add to cart" onClick={(e) => { e.preventDefault(); /* handle add */ }}>
+                      <button className="na-card-add" aria-label={t('new_arrivals_page.add_to_cart')} onClick={(e) => { e.preventDefault(); /* handle add */ }}>
                         <i className="fa-solid fa-plus" />
                       </button>
                       <div className="na-card-img">
@@ -71,9 +76,9 @@ export const NewArrivalsGrid: React.FC = () => {
                     </div>
                     <div className="na-card-info">
                       <h3 className="na-card-name">{prod.name}</h3>
-                      <p className="na-card-code">cod. {prod.code}</p>
+                      <p className="na-card-code">{t('new_arrivals_page.code_prefix')} {prod.code}</p>
                       <p className="na-card-brand">{prod.brand}</p>
-                      <span className="na-card-tag">{prod.category}</span>
+                      <span className="na-card-tag">{catLabel}</span>
                     </div>
                   </Link>
                 ))}

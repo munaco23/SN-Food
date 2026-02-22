@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './EventsGrid.css';
 import hero1 from '../../../Images/hero1.jpg';
 import hero2 from '../../../Images/hero2.jpg';
@@ -57,12 +58,14 @@ const events: EventItem[] = [
 ];
 
 export const EventsGrid: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="events-grid-sec">
       <div className="events-grid-inner">
         <header className="events-header">
-          <h1 className="events-title">Events</h1>
-          <p className="events-subtitle">Find out what happens in the Fresh Tropical world</p>
+          <h1 className="events-title">{t('events_page.title')}</h1>
+          <p className="events-subtitle">{t('events_page.subtitle')}</p>
         </header>
 
         <div className="events-grid">

@@ -3,8 +3,11 @@ import './Footer.css';
 import Logo from '../../../Images/Logo.jpeg';
 
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export const Footer: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="footer">
       <div className="footer-inner">
@@ -12,11 +15,10 @@ export const Footer: React.FC = () => {
           {/* Brand Info */}
           <div className="footer-col footer-brand-col">
             <Link to="/">
-              <img src={Logo} alt="Fresh Tropical" className="footer-logo" />
+              <img src={Logo} alt={t('footer.brand_alt')} className="footer-logo" />
             </Link>
             <p className="footer-brand-text">
-              Reference company for the import of ethnic food products into the national territory, 
-              and is expanding rapidly to the continental market.
+              {t('footer.brand_text')}
             </p>
             <div className="footer-socials">
               <a href="#" aria-label="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
@@ -26,53 +28,53 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="footer-col">
-            <h3 className="footer-title">Quick Links</h3>
+          <div className="footer-col footer-hide-mobile">
+            <h3 className="footer-title">{t('footer.quick_links')}</h3>
             <ul className="footer-links">
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/company">Company</Link></li>
-              <li><Link to="/team">Team</Link></li>
-              <li><Link to="/catalogs">Catalogues</Link></li>
-              <li><Link to="/events">Events</Link></li>
+              <li><Link to="/">{t('nav.home')}</Link></li>
+              <li><Link to="/company">{t('nav.company')}</Link></li>
+              <li><Link to="/team">{t('nav.team')}</Link></li>
+              <li><Link to="/catalogs">{t('footer.catalogues')}</Link></li>
+              <li><Link to="/events">{t('nav.events')}</Link></li>
             </ul>
           </div>
 
           {/* Categories */}
-          <div className="footer-col">
-            <h3 className="footer-title">Categories</h3>
+          <div className="footer-col footer-hide-mobile">
+            <h3 className="footer-title">{t('footer.categories')}</h3>
             <ul className="footer-links">
-              <li><Link to="/new-arrivals">New Arrivals</Link></li>
-              <li><Link to="/brands">Brands</Link></li>
-              <li><Link to="/vendors">Vendors</Link></li>
-              <li><Link to="/customers">Customers</Link></li>
-              <li><Link to="/login">Account</Link></li>
+              <li><Link to="/new-arrivals">{t('nav.new_arrivals')}</Link></li>
+              <li><Link to="/brands">{t('nav.brands')}</Link></li>
+              <li><Link to="/vendors">{t('nav.vendors')}</Link></li>
+              <li><Link to="/customers">{t('nav.customers')}</Link></li>
+              <li><Link to="/login">{t('footer.account')}</Link></li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div className="footer-col footer-contact-col">
-            <h3 className="footer-title">Contact Us</h3>
+            <h3 className="footer-title">{t('footer.contact_us')}</h3>
             <div className="footer-contact-item">
               <i className="fa-solid fa-location-dot"></i>
-              <span>Via some address, Italy</span>
+              <span>262 rue des Bouleaux, 59860 Bruay-sur-l’Escaut</span>
             </div>
             <div className="footer-contact-item">
               <i className="fa-solid fa-phone"></i>
-              <span>+39 123 456 789</span>
+              <span>{t('footer.contact_wholesale')}</span>
             </div>
             <div className="footer-contact-item">
               <i className="fa-solid fa-envelope"></i>
-              <span>info@freshtropical.it</span>
+              <span>contact@snfood.fr</span>
             </div>
           </div>
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Fresh Tropical srl by Jawad. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} SN Food Distribution. {t('footer.rights')}</p>
           <div className="footer-bottom-links">
-            <a href="#">Terms & Conditions</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Cookie Policy</a>
+            <a href="#">{t('footer.terms')}</a>
+            <a href="#">{t('footer.privacy')}</a>
+            <a href="#">{t('footer.cookie')}</a>
           </div>
         </div>
       </div>

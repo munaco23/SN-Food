@@ -1,25 +1,28 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './VendorHistory.css';
 import hero1 from '../../../Images/hero1.jpg';
 import hero2 from '../../../Images/hero2.jpg';
 
 export const VendorHistory: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="v-hist">
       <div className="v-hist-top">
         <div className="v-hist-inner">
           <div className="v-hist-content">
-            <h2 className="v-hist-title">A reference point since 2007</h2>
-            <h3 className="v-hist-sub">Distribution of ethnic food products</h3>
+            <h2 className="v-hist-title">{t('vendors.infrastructure.title')}</h2>
+            <h3 className="v-hist-sub">{t('vendors.infrastructure.sub')}</h3>
             <div className="v-hist-text">
               <p>
-                Fresh Tropical Ltd. by Jawad is a highly qualified company for the preservation and distribution of any ethnic specialty. Active since 2007 in the trade of products from all over the world, we have the tools and know-how necessary for the distribution of any product.
+                {t('vendors.infrastructure.p1')}
               </p>
               <p>
-                We have large warehouses for storage, equipped with a large fleet of forklifts and pallet trucks for internal movement of goods on site, and refrigerated cells with varying temperatures depending on the products, compliant with CEE law, as well as temperature-controlled vehicles for safe transport.
+                {t('vendors.infrastructure.p2')}
               </p>
               <p>
-                We also have all the necessary expertise for the application of HACCP regulations as well as for handling Halal products, and we can equally handle fresh, dry, and frozen products.
+                {t('vendors.infrastructure.p3')}
               </p>
             </div>
           </div>

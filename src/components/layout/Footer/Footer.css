@@ -166,6 +166,10 @@
     padding: 60px 0 40px;
   }
   
+  .footer-hide-mobile {
+    display: none !important;
+  }
+  
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 48px;

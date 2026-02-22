@@ -62,7 +62,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  color: #84bc22;
+  color: var(--navy-blue);
   cursor: pointer;
 }
 
@@ -73,13 +73,19 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: #84bc22;
+  background: var(--navy-blue);
   color: #ffffff;
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: background 0.2s;
+}
+
+.rp-add:hover {
+  background: #f4c550;
+  color: var(--navy-blue);
 }
 
 .rp-card-info {

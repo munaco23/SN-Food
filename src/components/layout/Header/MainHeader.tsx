@@ -1,6 +1,7 @@
 import React from 'react';
 import LogoImage from '../../../Images/Logo.jpeg';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 type MainHeaderProps = {
   onMenuClick: () => void;
@@ -8,6 +9,8 @@ type MainHeaderProps = {
 };
 
 export const MainHeader: React.FC<MainHeaderProps> = ({ onMenuClick, onCartClick }) => {
+  const { t } = useTranslation();
+
   return (
     <div className="main-header">
       <Link to="/" className="main-header-left" style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -16,7 +19,7 @@ export const MainHeader: React.FC<MainHeaderProps> = ({ onMenuClick, onCartClick
         </div>
         <div className="logo-text-block">
           <div className="logo-title">SN FOOD</div>
-          <div className="logo-subtitle">Premium Groceries</div>
+          <div className="logo-subtitle">{t('header.logo_subtitle')}</div>
         </div>
       </Link>
 
@@ -25,20 +28,20 @@ export const MainHeader: React.FC<MainHeaderProps> = ({ onMenuClick, onCartClick
           <input
             className="search-input"
             type="text"
-            placeholder="How can we help you ?"
+            placeholder={t('header.search_placeholder')}
           />
-          <button className="search-button">Search</button>
+          <button className="search-button">{t('header.search_button')}</button>
         </div>
       </div>
 
       <div className="main-header-right">
         <div className="header-actions">
-          <div className="account-action">
-            <button className="icon-button icon-button--bordered" aria-label="Accounts">
+          <Link to="/account" className="account-action" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <button className="icon-button icon-button--bordered" aria-label={t('header.accounts')}>
               <i className="fa-regular fa-user icon-svg" />
             </button>
-            <span className="account-label">Accounts</span>
-          </div>
+            <span className="account-label">{t('header.accounts')}</span>
+          </Link>
 
           <span className="actions-divider" aria-hidden="true" />
 

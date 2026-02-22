@@ -1,4 +1,5 @@
 import React, { useMemo, useRef, useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import './ExportEurope.css';
 
 type CountryItem = {
@@ -9,6 +10,7 @@ type CountryItem = {
 };
 
 export const ExportEurope: React.FC = () => {
+  const { t } = useTranslation();
   const railRef = useRef<HTMLDivElement | null>(null);
   const itemRefs = useRef<Array<HTMLDivElement | null>>([]);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -82,18 +84,17 @@ export const ExportEurope: React.FC = () => {
   };
 
   return (
-    <section className="ee" aria-label="We export to Europe">
+    <section className="ee" aria-label={t('export.title')}>
       <div className="ee-inner">
         <header className="ee-head">
           <div className="ee-copy">
-            <h2 className="ee-title">We export to Europe</h2>
+            <h2 className="ee-title">{t('export.title')}</h2>
             <p className="ee-text">
-              Fresh Tropical distributes throughout Italy (including islands) and in almost all European countries.
-              Labels are already translated into the country&apos;s languages and the main European languages.
+              {t('export.text')}
             </p>
           </div>
 
-          <button className="ee-arrow" type="button" aria-label="Scroll countries" onClick={scrollRight}>
+          <button className="ee-arrow" type="button" aria-label={t('export.title')} onClick={scrollRight}>
             <i className="fa-solid fa-chevron-right" aria-hidden="true" />
           </button>
         </header>

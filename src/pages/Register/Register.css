@@ -1,5 +1,5 @@
 .register-main {
-  background: #f9fafb;
+  background: #ffffff;
   padding: 60px 0;
   display: flex;
   justify-content: center;
@@ -24,7 +24,7 @@
   color: #111827;
   margin: 0 0 32px;
   padding-bottom: 12px;
-  border-bottom: 2px solid #84bc22;
+  border-bottom: 2px solid #f4c550;
   display: inline-block;
 }
 
@@ -76,13 +76,13 @@
 
 .form-group input:focus {
   outline: none;
-  border-color: #84bc22;
-  box-shadow: 0 0 0 3px rgba(132, 188, 34, 0.1);
+  border-color: var(--navy-blue);
+  box-shadow: 0 0 0 3px rgba(1, 21, 65, 0.12);
 }
 
 .auth-submit-btn {
   height: 48px;
-  background: #84bc22;
+  background: var(--navy-blue);
   color: #ffffff;
   border: none;
   border-radius: 6px;
@@ -90,11 +90,12 @@
   font-weight: 800;
   cursor: pointer;
   margin-top: 12px;
-  transition: background 0.2s;
+  transition: all 0.2s;
 }
 
 .auth-submit-btn:hover {
-  background: #73a41d;
+  background: #f4c550;
+  color: var(--navy-blue);
 }
 
 .auth-divider {
@@ -123,9 +124,9 @@
   align-items: center;
   justify-content: center;
   height: 48px;
-  border: 1px solid #84bc22;
+  border: 1px solid var(--navy-blue);
   background: #ffffff;
-  color: #84bc22;
+  color: var(--navy-blue);
   border-radius: 6px;
   font-size: 16px;
   font-weight: 800;
@@ -134,7 +135,7 @@
 }
 
 .auth-secondary-btn:hover {
-  background: rgba(132, 188, 34, 0.05);
+  background: rgba(1, 21, 65, 0.05);
 }
 
 @media (max-width: 640px) {

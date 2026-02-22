@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import './BrandsGrid.css';
 import Logo from '../../../Images/Logo.jpeg';
 
@@ -9,6 +10,8 @@ type Brand = {
 };
 
 export const BrandsGrid: React.FC = () => {
+  const { t } = useTranslation();
+
   const brands = useMemo<Brand[]>(
     () =>
       Array.from({ length: 16 }).map((_, i) => ({
@@ -20,16 +23,15 @@ export const BrandsGrid: React.FC = () => {
   );
 
   return (
-    <section className="bg" aria-label="All our brands">
+    <section className="bg" aria-label={t('company.brands.aria')}>
       <div className="bg-inner">
         <header className="bg-head">
-          <h2 className="bg-title">All our brands</h2>
-          <button className="bg-see" type="button">See all</button>
+          <h2 className="bg-title">{t('company.brands.title')}</h2>
+          <button className="bg-see" type="button">{t('company.brands.see_all')}</button>
         </header>
 
         <p className="bg-sub">
-          Fresh Tropical deals with dozens of international brands, from the most well-known to the local and typical
-          ones of a particular country. With us you can find everything you want!
+          {t('company.brands.sub')}
         </p>
 
         <div className="bg-grid">

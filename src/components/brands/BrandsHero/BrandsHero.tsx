@@ -1,8 +1,11 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './BrandsHero.css';
 import hero2 from '../../../Images/hero2.jpg';
 
 export const BrandsHero: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="brands-hero">
       <div className="brands-hero-bg">
@@ -10,9 +13,9 @@ export const BrandsHero: React.FC = () => {
         <div className="brands-hero-overlay" />
       </div>
       <div className="brands-hero-inner">
-        <h1 className="brands-hero-title">All our brands</h1>
+        <h1 className="brands-hero-title">{t('brands_page.hero_title')}</h1>
         <p className="brands-hero-text">
-          Fresh Tropical deals with dozens of brands internationally, from the most well-known to local and typical brands of a particular country. With us, you will find everything you want!
+          {t('brands_page.hero_text')}
         </p>
       </div>
     </section>

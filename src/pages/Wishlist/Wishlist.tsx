@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './Wishlist.css';
 import { Header } from '../../components/layout/Header/Header';
 import { Footer } from '../../components/layout/Footer/Footer';
@@ -27,14 +28,16 @@ const DUMMY_WISHLIST_ITEMS = [
 ];
 
 export const Wishlist: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="wishlist-page">
       <Header />
       <main className="wishlist-main">
         <div className="wishlist-container">
           <div className="wishlist-header">
-            <h1 className="wishlist-title">My Wishlist</h1>
-            <p className="wishlist-count">{DUMMY_WISHLIST_ITEMS.length} Items</p>
+            <h1 className="wishlist-title">{t('wishlist_page.title')}</h1>
+            <p className="wishlist-count">{t('wishlist_page.item_count', { count: DUMMY_WISHLIST_ITEMS.length })}</p>
           </div>
 
           {DUMMY_WISHLIST_ITEMS.length > 0 ? (
@@ -43,19 +46,23 @@ export const Wishlist: React.FC = () => {
                 <div key={item.id} className="wishlist-card">
                   <div className="wishlist-card-img">
                     <img src={item.image} alt={item.name} />
-                    <button className="remove-wishlist-btn" title="Remove from wishlist">
+                    <button
+                      className="remove-wishlist-btn"
+                      title={t('wishlist_page.remove')}
+                      aria-label={t('wishlist_page.remove')}
+                    >
                       <i className="fa-solid fa-xmark" />
                     </button>
                   </div>
                   <div className="wishlist-card-info">
                     <span className="item-category">{item.category}</span>
                     <h3 className="item-name">{item.name}</h3>
-                    <p className="item-code">cod. {item.code}</p>
+                    <p className="item-code">{t('wishlist_page.code_prefix')} {item.code}</p>
                     <div className="item-footer">
                       <span className="item-price">{item.price}</span>
                       <button className="wishlist-add-cart">
                         <i className="fa-solid fa-bag-shopping" />
-                        Add to Cart
+                        {t('wishlist_page.add_to_cart')}
                       </button>
                     </div>
                   </div>
@@ -65,9 +72,9 @@ export const Wishlist: React.FC = () => {
           ) : (
             <div className="empty-wishlist">
               <i className="fa-regular fa-heart empty-icon" />
-              <h2>Your wishlist is empty</h2>
-              <p>Save your favorite items here to buy them later.</p>
-              <Link to="/new-arrivals" className="shop-now-btn">Shop Now</Link>
+              <h2>{t('wishlist_page.empty.title')}</h2>
+              <p>{t('wishlist_page.empty.text')}</p>
+              <Link to="/new-arrivals" className="shop-now-btn">{t('wishlist_page.empty.cta')}</Link>
             </div>
           )}
         </div>

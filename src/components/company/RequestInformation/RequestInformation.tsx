@@ -1,19 +1,22 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './RequestInformation.css';
 
 export const RequestInformation: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
-    <section className="ri" aria-label="Request information">
+    <section className="ri" aria-label={t('company.request_info.aria')}>
       <div className="ri-inner">
         <div className="ri-left">
-          <h2 className="ri-title">Request information</h2>
+          <h2 className="ri-title">{t('company.request_info.title')}</h2>
           <p className="ri-text">
-            Fresh Tropical is at your disposal for any need: contact us and we will respond as soon as possible.
+            {t('company.request_info.text')}
           </p>
         </div>
 
         <div className="ri-right">
-          <button className="ri-btn" type="button">CONTACT US</button>
+          <button className="ri-btn" type="button">{t('company.request_info.cta')}</button>
         </div>
       </div>
     </section>

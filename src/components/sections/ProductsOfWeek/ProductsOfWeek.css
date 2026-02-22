@@ -13,28 +13,51 @@
 
 .pow-title {
   margin: 0;
-  font-size: 24px;
-  font-weight: 400;
+  font-size: 28px;
+  font-weight: 500;
   color: #111827;
 }
 
-.pow-next {
+.pow-nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pow-nav-btn {
   width: 40px;
   height: 40px;
-  border-radius: 999px;
-  border: 1px solid #24314d;
+  border-radius: 8px; /* Square with slight rounding instead of circle */
+  border: 1px solid #e5e7eb;
   background: #ffffff;
   color: #24314d;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.pow-nav-btn:hover {
+  background: #24314d;
+  color: #ffffff;
+  border-color: #24314d;
+}
+
+.pow-nav-btn i {
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .pow-nav-buttons {
+    display: none; /* Hide nav buttons on mobile as it's scrollable */
+  }
 }
 
 .pow-scroller {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: 280px;
+  grid-auto-columns: 240px;
   gap: 20px;
   overflow-x: auto;
   padding: 10px 0 20px;
@@ -59,59 +82,93 @@
   position: relative;
   background: #ffffff;
   border: 1px solid #eeeeee;
-  border-radius: 8px;
-  padding: 20px;
+  border-radius: 5px;
+  padding: 15px;
   scroll-snap-align: start;
-  box-shadow: none;
-  transition: transform 0.2s ease;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  box-shadow: none !important;
 }
 
 .pow-card:hover {
   transform: translateY(-4px);
-  justify-content: center;
-}
-
-.pow-heart {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  background: transparent;
-  border: none;
-  color: #24314d;
-  font-size: 20px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  z-index: 2;
-}
-
-.pow-plus {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 38px;
-  height: 38px;
-  border-radius: 999px;
-  border: none;
-  background: #24314d;
-  color: #ffffff;
-  cursor: pointer;
-  box-shadow: none;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
 }
 
 .pow-imageWrap {
-  height: 220px;
+  height: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 18px 10px 10px;
+  position: relative;
+}
+
+.pow-actions-sidebar {
+  position: absolute;
+  top: 10px;
+  right: -2px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 5;
+}
+
+.pow-action-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  border: 1px solid #f1f5f9;
+  background: #ffffff;
+  color: #24314d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); */
+}
+
+/* Wishlist button is always visible */
+.pow-action-btn[aria-label="Add to wishlist"] {
+  opacity: 1;
+  transform: translateX(0);
+  visibility: visible;
+}
+
+/* Other 3 buttons hidden by default */
+.pow-action-btn:not([aria-label="Add to wishlist"]) {
+  opacity: 0;
+  transform: translateX(40px);
+  visibility: hidden;
+}
+
+/* Hover animation: staggered slide in from right */
+.pow-card:hover .pow-action-btn:not([aria-label="Add to wishlist"]) {
+  opacity: 1;
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.pow-card:hover .pow-action-btn[aria-label="Add to cart"] {
+  transition-delay: 0.05s;
+}
+
+.pow-card:hover .pow-action-btn[aria-label="Compare"] {
+  transition-delay: 0.1s;
+}
+
+.pow-card:hover .pow-action-btn[aria-label="Quick view"] {
+  transition-delay: 0.15s;
+}
+
+.pow-action-btn:hover {
+  background: #24314d;
+  color: #ffffff;
+  border-color: #24314d;
+}
+
+.pow-action-btn i {
+  font-size: 15px;
 }
 
 .pow-image {
@@ -126,9 +183,15 @@
 
 .pow-name {
   font-size: 16px;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  color: #111827;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.4;
+  min-height: 40px;
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .pow-variant {

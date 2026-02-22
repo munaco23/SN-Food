@@ -1,8 +1,11 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './NewArrivalsHero.css';
 import hero2 from '../../../Images/hero2.jpg';
 
 export const NewArrivalsHero: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="na-hero">
       <div className="na-hero-bg">
@@ -10,9 +13,9 @@ export const NewArrivalsHero: React.FC = () => {
         <div className="na-hero-overlay" />
       </div>
       <div className="na-hero-inner">
-        <h1 className="na-hero-title">New Arrivals</h1>
+        <h1 className="na-hero-title">{t('new_arrivals_page.hero_title')}</h1>
         <p className="na-hero-text">
-          Fresh Tropical srl by Jawad is a company constantly looking for new products and ethnic gastronomic experiences. Here you will find our new arrivals in the catalog
+          {t('new_arrivals_page.hero_text')}
         </p>
       </div>
     </section>

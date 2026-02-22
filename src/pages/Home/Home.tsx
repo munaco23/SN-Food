@@ -1,12 +1,12 @@
 import React from 'react';
 import { Header } from '../../components/layout/Header/Header';
 import { HeroSlider } from '../../components/sections/HeroSlider/HeroSlider';
+import { FeatureHighlights } from '../../components/sections/FeatureHighlights/FeatureHighlights';
 import { ProductsOfWeek } from '../../components/sections/ProductsOfWeek/ProductsOfWeek';
+import { TopRatedSection } from '../../components/sections/TopRatedSection/TopRatedSection';
 import { DiscoverBanner } from '../../components/sections/DiscoverBanner/DiscoverBanner';
 import { CategoriesSection } from '../../components/sections/CategoriesSection/CategoriesSection';
-import { CatalogShowcase } from '../../components/sections/CatalogShowcase/CatalogShowcase';
 import { FeatureStrip } from '../../components/sections/FeatureStrip/FeatureStrip';
-import { ValuesSection } from '../../components/sections/ValuesSection/ValuesSection';
 import { EventsSection } from '../../components/sections/EventsSection/EventsSection';
 import { ColorsPromo } from '../../components/sections/ColorsPromo/ColorsPromo';
 import { BrandsGrid } from '../../components/sections/BrandsGrid/BrandsGrid';
@@ -18,12 +18,12 @@ export const Home: React.FC = () => {
     <>
       <Header />
       <HeroSlider />
+      <FeatureHighlights />
       <ProductsOfWeek />
       <DiscoverBanner />
       <CategoriesSection />
-      <CatalogShowcase />
+      <TopRatedSection />
       <FeatureStrip />
-      <ValuesSection />
       <EventsSection />
       <ColorsPromo />
       <BrandsGrid />

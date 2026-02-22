@@ -1,53 +1,56 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './VendorWhyChooseUs.css';
 
-const features = [
-  {
-    icon: 'house',
-    title: 'Dedicated warehouses',
-    desc: '47,000 sqm total storage area for both fresh and preserved products'
-  },
-  {
-    icon: 'box',
-    title: 'Guaranteed stock',
-    desc: 'Warehouses located between northern and southern Italy, with locations in Milan, Brescia, Bologna, and Naples'
-  },
-  {
-    icon: 'truck-ramp-box',
-    title: 'High-tech logistics',
-    desc: 'Modern equipment, forklifts, and pallet trucks for proper warehouse management'
-  },
-  {
-    icon: 'truck-fast',
-    title: 'Transport fleet',
-    desc: 'Vans and refrigerated cells with varying and controlled temperatures throughout the delivery process'
-  },
-  {
-    icon: 'certificate',
-    title: 'Certifications',
-    desc: 'Guarantee certifications and extensive knowledge of HACCP procedures and Halal products'
-  },
-  {
-    icon: 'truck-pickup',
-    title: 'Guaranteed deliveries',
-    desc: 'Orders fulfilled within 24 hours in Italy. Shipping with refrigerated vehicles within 48 hours of order receipt'
-  }
-];
-
 export const VendorWhyChooseUs: React.FC = () => {
+  const { t } = useTranslation();
+
+  const features = [
+    {
+      icon: 'shield-check',
+      title: t('vendors.guarantees.items.excellence.title'),
+      desc: t('vendors.guarantees.items.excellence.desc')
+    },
+    {
+      icon: 'box',
+      title: t('vendors.guarantees.items.supply.title'),
+      desc: t('vendors.guarantees.items.supply.desc')
+    },
+    {
+      icon: 'handshake',
+      title: t('vendors.guarantees.items.partnerships.title'),
+      desc: t('vendors.guarantees.items.partnerships.desc')
+    },
+    {
+      icon: 'snowflake',
+      title: t('vendors.guarantees.items.cold_chain.title'),
+      desc: t('vendors.guarantees.items.cold_chain.desc')
+    },
+    {
+      icon: 'truck-fast',
+      title: t('vendors.guarantees.items.innovation.title'),
+      desc: t('vendors.guarantees.items.innovation.desc')
+    },
+    {
+      icon: 'certificate',
+      title: t('vendors.guarantees.items.certified.title'),
+      desc: t('vendors.guarantees.items.certified.desc')
+    }
+  ];
+
   return (
     <section className="v-why">
       <div className="v-why-inner">
         <header className="v-why-head">
           <div className="v-why-head-left">
-            <h2 className="v-why-title">Why choose us</h2>
-            <h3 className="v-why-sub">A reference company for the importation of ethnic food products nationwide</h3>
+            <h2 className="v-why-title">{t('vendors.guarantees.title')}</h2>
+            <h3 className="v-why-sub">{t('vendors.guarantees.sub')}</h3>
             <p className="v-why-desc">
-              Fresh Tropical establishes itself as the largest importer of ethnic food products in Italy and a reference point for the foreign market. We are committed to delivering every order within 24 hours, and thanks to an efficient and highly organized logistics system, we guarantee the quality and freshness of all our catalog products.
+              {t('vendors.guarantees.desc')}
             </p>
           </div>
           <div className="v-why-head-right">
-            <button className="v-why-cta" type="button">Request catalog</button>
+            <button className="v-why-cta" type="button">{t('vendors.guarantees.cta')}</button>
           </div>
         </header>
 

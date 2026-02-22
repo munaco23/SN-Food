@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import './HeroSlider.css';
 import Hero1 from '../../../Images/hero1.jpg';
 import Hero2 from '../../../Images/hero2.jpg';
@@ -10,12 +11,14 @@ type Slide = {
 };
 
 export const HeroSlider: React.FC = () => {
+  const { t } = useTranslation();
+
   const slides: Slide[] = useMemo(
     () => [
-      { id: 'slide-1', imageSrc: Hero1, alt: 'Hero slide 1' },
-      { id: 'slide-2', imageSrc: Hero2, alt: 'Hero slide 2' },
+      { id: 'slide-1', imageSrc: Hero1, alt: t('slider.slide_alt', { index: 1 }) },
+      { id: 'slide-2', imageSrc: Hero2, alt: t('slider.slide_alt', { index: 2 }) },
     ],
-    []
+    [t]
   );
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -95,20 +98,20 @@ export const HeroSlider: React.FC = () => {
           ))}
         </div>
 
-        <button className="hero-arrow hero-arrow--left" onClick={goPrev} aria-label="Previous slide">
+        <button className="hero-arrow hero-arrow--left" onClick={goPrev} aria-label={t('slider.prev')}>
           <span className="hero-arrow-icon" aria-hidden="true">‹</span>
         </button>
-        <button className="hero-arrow hero-arrow--right" onClick={goNext} aria-label="Next slide">
+        <button className="hero-arrow hero-arrow--right" onClick={goNext} aria-label={t('slider.next')}>
           <span className="hero-arrow-icon" aria-hidden="true">›</span>
         </button>
 
-        <div className="hero-dots" role="tablist" aria-label="Select slide">
+        <div className="hero-dots" role="tablist" aria-label={t('slider.select')}>
           {slides.map((slide, index) => (
             <button
               key={slide.id}
               className={`hero-dot${index === activeIndex ? ' hero-dot--active' : ''}`}
               onClick={() => setActiveIndex(index)}
-              aria-label={`Go to slide ${index + 1}`}
+              aria-label={t('slider.go_to', { index: index + 1 })}
               aria-selected={index === activeIndex}
               role="tab"
               type="button"

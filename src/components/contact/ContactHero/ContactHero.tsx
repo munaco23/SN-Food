@@ -7,7 +7,7 @@ export const ContactHero: React.FC = () => {
       <div className="contact-hero-overlay" />
       <div className="contact-hero-content">
         <h1>Contact Us</h1>
-        <p>We'd love to hear from you. Get in touch with our team of enthusiasts.</p>
+        <p>African & Asian food wholesaler based in Bruay-sur-l’Escaut. Get in touch with our team today.</p>
       </div>
     </section>
   );

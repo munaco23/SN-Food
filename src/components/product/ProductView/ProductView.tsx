@@ -13,13 +13,13 @@ export const ProductView: React.FC = () => {
         </nav>
 
         <div className="pv-main-content">
-          <div className="pv-left">
+          <div className="pv-left-col">
             <div className="pv-image-box">
               <img src={Logo} alt="GK GINGER CANDY" />
             </div>
           </div>
 
-          <div className="pv-center">
+          <div className="pv-center-col">
             <h1 className="pv-title">GK GINGER CANDY ORANGE 24X85G</h1>
             <p className="pv-cod">cod. 12140</p>
 
@@ -41,7 +41,7 @@ export const ProductView: React.FC = () => {
             </table>
           </div>
 
-          <div className="pv-right">
+          <div className="pv-right-col">
             <div className="pv-status">
               <i className="fa-regular fa-heart pv-wish-icon" />
               <span className="pv-available">
@@ -86,9 +86,9 @@ export const ProductView: React.FC = () => {
             </div>
 
             <div className="pv-origin">
-              <p>Shipped from Fresh Tropical</p>
+              <p>Shipped from SN Food</p>
               <div className="pv-ft-logo">
-                <img src={Logo} alt="Fresh Tropical" />
+                <img src={Logo} alt="SN Food" />
               </div>
             </div>
           </div>

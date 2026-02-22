@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './BrandsDetailGrid.css';
 import Logo from '../../../Images/Logo.jpeg';
 
@@ -30,10 +31,12 @@ const popularBrands: Brand[] = [
 ];
 
 export const BrandsDetailGrid: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="brands-det-sec">
       <div className="brands-det-inner">
-        <h2 className="brands-det-title">Brand popolari</h2>
+        <h2 className="brands-det-title">{t('brands_page.popular_title')}</h2>
         
         <div className="brands-det-grid">
           {popularBrands.map((brand) => (

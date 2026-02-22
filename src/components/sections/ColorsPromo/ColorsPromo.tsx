@@ -1,62 +1,77 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import './ColorsPromo.css';
 import FoodImg from '../../../Images/hero2.jpg';
-import BrandLogo from '../../../Images/Logo.jpeg';
+import BgImg from '../../../Images/hero1.jpg';
 
 export const ColorsPromo: React.FC = () => {
   return (
-    <section className="cp" aria-label="All the colors of food">
-      <div className="cp-hero">
-        <div className="cp-heroInner">
-          <div className="cp-left">
-            <div className="cp-brand" aria-label="Fresh Tropical">
-              <img className="cp-brandLogo" src={BrandLogo} alt="" aria-hidden="true" />
-              <span className="cp-brandText">SN Foods</span>
-              <span className="cp-brandSub">by SN</span>
+    <section className="cp-modern" aria-label="Wholesale Solutions">
+      <div className="cp-modern-hero" style={{ backgroundImage: `url(${BgImg})` }}>
+        <div className="cp-modern-overlay" />
+        <div className="cp-modern-container">
+          <div className="cp-modern-grid">
+            <div className="cp-modern-content">
+              <div className="cp-modern-badge">Wholesale Excellence</div>
+              <h2 className="cp-modern-title">Premium Food Solutions</h2>
+              <p className="cp-modern-text">
+                Partner with SN Food Distribution for exclusive ethnic products, 
+                scalable logistics, and competitive wholesale pricing.
+              </p>
+              
+              <div className="cp-modern-features">
+                <div className="cp-feature-item">
+                  <span className="cp-feature-icon"><i className="fa-solid fa-truck-ramp-box" /></span>
+                  <div className="cp-feature-info">
+                    <h4>Smart Logistics</h4>
+                  </div>
+                </div>
+                <div className="cp-feature-item">
+                  <span className="cp-feature-icon"><i className="fa-solid fa-tags" /></span>
+                  <div className="cp-feature-info">
+                    <h4>Competitive Rates</h4>
+                  </div>
+                </div>
+              </div>
+
+              <div className="cp-modern-actions">
+                <button className="cp-btn-primary" type="button">Become a Partner</button>
+                <button className="cp-btn-secondary" type="button">Catalog</button>
+              </div>
             </div>
 
-            <h2 className="cp-title">All the colors of food</h2>
-            <p className="cp-text">
-              Every day, we distribute the best products from all over the world to stores, wholesalers and retailers,
-              with a 24-hour delivery service. We are at your disposal for any need: contact us and we will reply as soon
-              as possible
-            </p>
-
-            <div className="cp-actions">
-              <button className="cp-btn cp-btn--primary" type="button">Company</button>
-              <button className="cp-btn cp-btn--ghost" type="button">Discover the catalogues</button>
-            </div>
-          </div>
-
-          <div className="cp-right" aria-hidden="true">
-            <div className="cp-circle">
-              <img className="cp-circleImg" src={FoodImg} alt="" />
+            <div className="cp-modern-visual">
+              <div className="cp-circle-wrap">
+                <img className="cp-circle-img" src={FoodImg} alt="Premium Products" />
+                <div className="cp-floating-badge">
+                  <span className="cp-badge-val">15+</span>
+                  <span className="cp-badge-lab">YEARS</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="cp-news" aria-label="Newsletter">
-        <div className="cp-newsInner">
-          <div className="cp-newsLeft">
-            <div className="cp-newsTitle">Want some offers?</div>
-            <div className="cp-newsSub">Sign up for our newsletter for free!</div>
-          </div>
-
-          <form className="cp-newsForm">
-            <div className="cp-newsRow">
-              <input className="cp-input" type="email" placeholder="Your email" aria-label="Your email" />
-              <button className="cp-sign" type="button">Sign up</button>
+      <div className="cp-newsletter-v2">
+        <div className="cp-newsletter-v2-container">
+          <div className="cp-newsletter-v2-content">
+            <div className="cp-newsletter-v2-left">
+              <h3>Want some offers?</h3>
+              <p>Sign up for our newsletter for free!</p>
             </div>
-
-            <label className="cp-check">
-              <input type="checkbox" />
-              <span>
-                I have read and accept the <button className="cp-inlineLink" type="button">Terms and Conditions</button>
-                {' '}and the <button className="cp-inlineLink" type="button">Privacy Policy</button>
-              </span>
-            </label>
-          </form>
+            <div className="cp-newsletter-v2-right">
+              <form className="cp-newsletter-v2-form">
+                <div className="cp-v2-input-row">
+                  <input type="email" placeholder="Your email" aria-label="Your email" />
+                  <button type="button">SIGN UP</button>
+                </div>
+                <label className="cp-v2-checkbox">
+                  <input type="checkbox" />
+                  <span>I have read and accept the <u>Terms and Conditions</u> and the <u>Privacy Policy</u></span>
+                </label>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </section>

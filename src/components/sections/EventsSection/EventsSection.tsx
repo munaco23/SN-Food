@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import './EventsSection.css';
 import Img1 from '../../../Images/hero2.jpg';
 import Img2 from '../../../Images/hero1.jpg';
@@ -13,6 +14,8 @@ type EventItem = {
 };
 
 export const EventsSection: React.FC = () => {
+  const { t } = useTranslation();
+
   const events = useMemo<EventItem[]>(
     () => [
       {
@@ -46,15 +49,15 @@ export const EventsSection: React.FC = () => {
   );
 
   return (
-    <section className="ev" aria-label="Events">
+    <section className="ev" aria-label={t('events_page.title')}>
       <div className="ev-inner">
         <header className="ev-head">
           <div>
-            <h2 className="ev-title">Events</h2>
-            <div className="ev-sub">Find out what happens in the Fresh Tropical world</div>
+            <h2 className="ev-title">{t('events_page.title')}</h2>
+            <div className="ev-sub">{t('events_page.subtitle')}</div>
           </div>
 
-          <button className="ev-headLink" type="button">Go to the events page</button>
+          <button className="ev-headLink" type="button">{t('events_page.go_to')}</button>
         </header>
 
         <div className="ev-grid">

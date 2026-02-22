@@ -1,21 +1,23 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './DiscoverBanner.css';
 import BannerImage from '../../../Images/hero2.jpg';
 
 export const DiscoverBanner: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
-    <section className="discover" aria-label="Discover products">
+    <section className="discover" aria-label={t('discover.title')}>
       <div className="discover-bg" style={{ backgroundImage: `url(${BannerImage})` }}>
         <div className="discover-overlay" />
         <div className="discover-inner">
           <h2 className="discover-title">
-            Discover products from Africa
+            {t('discover.title')}
           </h2>
           <p className="discover-subtitle">
-            Fresh Tropical srl by Jawad is a reference company for the import of ethnic food products from the
-            territories of Africa. Discover our typical products
+            {t('discover.subtitle')}
           </p>
-          <button className="discover-cta" type="button">PRODUCTS</button>
+          <button className="discover-cta" type="button">{t('discover.cta')}</button>
         </div>
       </div>
     </section>

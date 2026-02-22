@@ -1,6 +1,5 @@
 import React, { useCallback, useState } from 'react';
 import { TopNoticeBar } from './TopNoticeBar';
-import { BrandBar } from './BrandBar';
 import { MainHeader } from './MainHeader';
 import { CategoryBar } from './CategoryBar';
 import { OffcanvasMenu } from '../OffcanvasMenu/OffcanvasMenu';
@@ -20,7 +19,6 @@ export const Header: React.FC = () => {
   return (
     <header className="header-root">
       <TopNoticeBar />
-      <BrandBar />
       <MainHeader onMenuClick={openMenu} onCartClick={openCart} />
       <CategoryBar />
       <OffcanvasMenu isOpen={isMenuOpen} onClose={closeMenu} onCartClick={openCart} />

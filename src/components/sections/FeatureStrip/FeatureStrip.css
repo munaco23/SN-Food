@@ -1,299 +1,192 @@
-.fs {
+.brand-story {
   width: 100%;
   position: relative;
-  background-image: var(--fs-bg);
-  background-size: cover;
+  overflow: hidden;
+}
+
+.brand-story-parallax {
+  position: relative;
+  background-attachment: fixed;
   background-position: center;
-  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 750px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 0;
 }
 
-.fs::before {
-  content: '';
+.brand-story-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(17, 24, 39, 0.18) 0%, rgba(17, 24, 39, 0.24) 55%, rgba(17, 24, 39, 0.30) 100%);
-  pointer-events: none;
+background: linear-gradient(90deg, rgba(26, 26, 26, 0.86) 0%, rgba(3, 3, 3, 0.72) 45%, rgba(0, 0, 0, 0.32) 100%);  z-index: 1;
 }
 
-.fs-hero {
-  position: relative;
-  width: 100%;
-  min-height: 520px;
-  overflow: hidden;
-}
-
-.fs-hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(17, 24, 39, 0.70) 0%, rgba(17, 24, 39, 0.35) 55%, rgba(17, 24, 39, 0.10) 100%);
-}
-
-.fs-hero-inner {
+.brand-story-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1%;
   position: relative;
   z-index: 2;
   width: 100%;
-  box-sizing: border-box;
-  padding: 96px 1% 150px;
+}
+
+.brand-story-grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.9fr;
-  gap: 28px;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 100px;
   align-items: center;
 }
 
-.fs-hero-left {
+.brand-story-content {
   color: #ffffff;
-  max-width: 760px;
 }
 
-.fs-title {
+.brand-story-kicker {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #f4c550; /* SN Food Yellow */
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  margin-bottom: 24px;
+  position: relative;
+  padding-left: 50px;
+}
+
+.brand-story-kicker::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 35px;
+  height: 2px;
+  background: #f4c550;
+  transform: translateY(-50%);
+}
+
+.brand-story-title {
   margin: 0;
   font-family: var(--font-montserrat);
-  font-size: clamp(40px, 5.4vw, 124px);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.02;
-  width: 80%;
-}
-
-.fs-text {
-  margin: 18px 0 0;
-  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 15px;
-  line-height: 1.55;
-  max-width: 620px;
-  opacity: 0.95;
-}
-
-.fs-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 22px;
-}
-
-.fs-btn {
-  height: 44px;
-  padding: 0 32px;
-  border-radius: 999px;
-  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(38px, 5vw, 68px);
   font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
-.fs-btn--primary {
-  border: none;
-  background: #f4c550;
-  color: #24314d;
-}
-
-.fs-btn--ghost {
-  background: transparent;
-  color: #ffffff;
-  border: 2px solid rgba(255, 255, 255, 0.75);
-}
-
-.fs-hero-right {
-  justify-self: end;
-  width: min(520px, 100%);
-  border-radius: 18px;
-  padding: 22px;
-  background: rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
   color: #ffffff;
 }
 
-.fs-brand {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 38px;
-  padding: 0 14px;
-  border-radius: 10px;
-  border: 2px solid rgba(244, 197, 80, 0.65);
-  color: #f4c550;
-  font-weight: 900;
-  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  letter-spacing: 0.02em;
+.brand-story-divider {
+  width: 80px;
+  height: 4px;
+  background: #f4c550; /* SN Food Yellow */
+  margin: 40px 0;
+  border-radius: 2px;
 }
 
-.fs-right-title {
-  margin-top: 12px;
-  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 16px;
-  font-weight: 900;
-}
-
-.fs-right-text {
-  margin-top: 10px;
-  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 13px;
-  line-height: 1.55;
-  opacity: 0.95;
-}
-
-.fs-divider {
-  height: 1px;
-  width: 100%;
-  margin: 16px 0;
-  background: rgba(255, 255, 255, 0.30);
-}
-
-.fs-right-actions {
-  margin-top: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-}
-
-.fs-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  height: 38px;
-  padding: 0 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  background: rgba(36, 49, 77, 0.40);
-  color: #ffffff;
-  font-weight: 800;
-  cursor: pointer;
-}
-
-.fs-pill-icon {
-  width: 26px;
-  height: 26px;
-  border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.fs-link {
-  border: none;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.92);
-  font-weight: 800;
-  cursor: pointer;
-}
-
-.fs-stats {
-  width: 100%;
-  background: transparent;
-  margin-top: -86px;
-  padding: 0 0 64px;
-  position: relative;
-  z-index: 3;
-}
-
-.fs-stats-inner {
-  width: 100%;
-  box-sizing: border-box;
-  padding-left: 5px;
-  padding-right: 5px;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 22px;
-}
-
-.fs-stat {
-  border-radius: 18px;
-  padding: 22px;
-  background: rgba(120, 120, 120, 0.56);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(10px);
-  min-height: 220px;
-  color: rgba(255, 255, 255, 0.92);
-}
-
-.fs-stat:nth-child(1) {
-  background: linear-gradient(135deg, rgba(120, 120, 120, 0.62), rgba(150, 150, 150, 0.46));
-}
-
-.fs-stat:nth-child(2) {
-  background: linear-gradient(135deg, rgba(135, 120, 110, 0.62), rgba(160, 145, 130, 0.46));
-}
-
-.fs-stat:nth-child(3) {
-  background: linear-gradient(135deg, rgba(120, 130, 125, 0.62), rgba(150, 160, 150, 0.46));
-}
-
-.fs-stat:nth-child(4) {
-  background: linear-gradient(135deg, rgba(135, 120, 125, 0.62), rgba(175, 150, 160, 0.46));
-}
-
-.fs-stat-icon {
-  width: 46px;
-  height: 46px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.22);
-  color: rgba(0, 0, 0, 0.70);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.brand-story-text {
   font-size: 18px;
+  line-height: 1.8;
+  color: rgb(255, 255, 255);
+  margin-bottom: 24px;
+  font-weight: 400;
+  max-width: 650px;
 }
 
-.fs-stat-title {
-  margin-top: 14px;
-  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 20px;
+.brand-story-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.vision-card {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 35px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.vision-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: -20px 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.vision-number {
+  font-family: var(--font-montserrat);
+  font-size: 28px;
   font-weight: 900;
-  color: rgba(255, 255, 255, 0.95);
+  color: #f4c550; /* SN Food Yellow */
+  display: block;
+  margin-bottom: 18px;
+  opacity: 0.9;
 }
 
-.fs-stat-text {
-  margin-top: 10px;
-  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 14px;
-  line-height: 1.55;
-  color: rgba(255, 255, 255, 0.86);
+.vision-card-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 14px;
+}
+
+.vision-card-desc {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.877);
 }
 
 @media (max-width: 1024px) {
-  .fs-hero-inner {
+  .brand-story-parallax {
+    background-attachment: scroll;
+    min-height: auto;
+    padding: 80px 0;
+  }
+  
+  .brand-story-grid {
     grid-template-columns: 1fr;
+    gap: 60px;
   }
 
-  .fs-hero-right {
-    justify-self: start;
+  .brand-story-content {
+    text-align: left;
   }
 
-  .fs-stats-inner {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .brand-story-kicker {
+    padding-left: 50px;
   }
 
-  .fs-stats {
-    margin-top: -64px;
+  .brand-story-kicker::before {
+    display: block;
+  }
+
+  .brand-story-divider {
+    margin: 35px 0;
+  }
+
+  .brand-story-text {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .vision-card:hover {
+    transform: translateY(-5px);
   }
 }
 
-@media (max-width: 560px) {
-  .fs-hero {
-    min-height: 560px;
+@media (max-width: 768px) {
+  .brand-story-container {
+    padding: 0 25px;
   }
-
-  .fs-hero-inner {
-    padding: 44px 5px 110px;
+  
+  .brand-story-title {
+    font-size: 36px;
   }
-
-  .fs-right-actions {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .fs-stats-inner {
-    grid-template-columns: 1fr;
-  }
-
-  .fs-stats {
-    margin-top: -54px;
-  }
-  .fs-title{
-     font-size: clamp(38px, 5.5vw, 78px);
+  .brand-story-text{
+    font-size:  18px;
   }
 }

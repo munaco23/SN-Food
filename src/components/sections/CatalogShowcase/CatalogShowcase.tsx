@@ -1,4 +1,5 @@
 import React, { useMemo, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import './CatalogShowcase.css';
 import ImgA from '../../../Images/hero1.jpg';
 import ImgB from '../../../Images/hero2.jpg';
@@ -16,6 +17,7 @@ type MiniItem = {
 };
 
 export const CatalogShowcase: React.FC = () => {
+  const { t } = useTranslation();
   const leftSlides = useMemo<Slide[]>(
     () => [
       { id: 'l1', title: 'Legumi/Cereali', imageSrc: ImgA },
@@ -68,70 +70,24 @@ export const CatalogShowcase: React.FC = () => {
   const next = (index: number, total: number) => (index + 1) % total;
 
   return (
-    <section className="showcase" aria-label="Catalog showcase">
+    <section className="showcase" aria-label={t('catalog.title')}>
       <div className="showcase-inner">
         <div className="showcase-head">
-          <h2 className="showcase-title">A wide catalog dedicated to food professionals</h2>
+          <h2 className="showcase-title">{t('catalog.title')}</h2>
           <p className="showcase-subtitle">
-            Discover our most viewed categories and top products, with premium logistics and temperature-controlled
-            delivery.
+            {t('catalog.subtitle')}
           </p>
         </div>
 
-        <div className="showcase-colsHead" aria-hidden="true">
-          <div className="colHead">Most Viewed Categories</div>
-          <div className="colHead">Top Products</div>
-          <div className="colHead">Delivery within 24 hours</div>
+        <div className="showcase-colsHead showcase-colsHead--single" aria-hidden="true">
+          <div className="colHead">{t('catalog.col_top')}</div>
         </div>
 
-        <div className="showcase-grid">
+        <div className="showcase-grid showcase-grid--single">
           <article className="showcard">
+            <div className="colHead colHead--mobile">{t('catalog.col_top')}</div>
             <div className="showcard-top">
-              <div className="showcard-pill" aria-label={leftSlides[leftActive].title}>
-                <i className="fa-regular fa-lemon" aria-hidden="true" />
-                <span>{leftSlides[leftActive].title}</span>
-              </div>
-            </div>
-
-            <div className="showcard-media showcard-media--tall">
-              <img className="showcard-img" src={leftSlides[leftActive].imageSrc} alt={leftSlides[leftActive].title} />
-
-              <button
-                className="showcard-nav showcard-nav--left"
-                type="button"
-                aria-label="Previous"
-                onClick={() => setLeftActive((v) => prev(v, leftSlides.length))}
-              >
-                <i className="fa-solid fa-chevron-left" />
-              </button>
-              <button
-                className="showcard-nav showcard-nav--right"
-                type="button"
-                aria-label="Next"
-                onClick={() => setLeftActive((v) => next(v, leftSlides.length))}
-              >
-                <i className="fa-solid fa-chevron-right" />
-              </button>
-            </div>
-
-            <div className="showcard-mini" ref={leftMiniRef}>
-              {leftThumbs.map((t) => (
-                <button key={t.id} className="mini" type="button" aria-label={t.label}>
-                  <img className="mini-img" src={t.imageSrc} alt={t.label} />
-                </button>
-              ))}
-            </div>
-
-            <div className="showcard-dots" aria-hidden="true">
-              {leftSlides.map((s, i) => (
-                <span key={s.id} className={`showdot${i === leftActive ? ' showdot--active' : ''}`} />
-              ))}
-            </div>
-          </article>
-
-          <article className="showcard">
-            <div className="showcard-top">
-              <div className="showcard-pill showcard-pill--soft">Fresh to Frozen</div>
+              <div className="showcard-pill showcard-pill--soft">{t('catalog.pill_fresh_frozen')}</div>
             </div>
 
             <div className="showcard-media showcard-media--center">
@@ -180,32 +136,6 @@ export const CatalogShowcase: React.FC = () => {
               ))}
             </div>
           </article>
-
-          <div className="show-right">
-            <article className="promo" aria-label="Delivery promo">
-              <div className="promo-bg" style={{ backgroundImage: `url(${ImgB})` }}>
-                <div className="promo-overlay" />
-                <div className="promo-content">
-                  <div className="promo-title">180+ vehicles temperature controlled</div>
-                  <div className="promo-text">
-                    Temperature-monitored cold chain deliveries aligned with best practices and quality standards.
-                  </div>
-                  <button className="promo-link" type="button">Discover More</button>
-                </div>
-              </div>
-            </article>
-
-            <article className="suggest" aria-label="Suggested category">
-              <div className="suggest-kicker">Today we suggest...</div>
-              <div className="suggest-card">
-                <div className="suggest-media" style={{ backgroundImage: `url(${ImgA})` }} />
-                <div className="suggest-body">
-                  <div className="suggest-title">Fresh</div>
-                  <button className="suggest-link" type="button">Go to Category</button>
-                </div>
-              </div>
-            </article>
-          </div>
         </div>
       </div>
     </section>

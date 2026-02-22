@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './OffcanvasMenu.css';
 
 type OffcanvasMenuProps = {
@@ -9,25 +10,26 @@ type OffcanvasMenuProps = {
 };
 
 const MENU_ITEMS = [
-  { label: 'Home', path: '/' },
-  { 
-    label: 'Pages', 
+  { key: 'home', path: '/' },
+  {
+    key: 'pages',
     path: '#',
     children: [
-      { label: 'Company', path: '/company' },
-      { label: 'Team', path: '/team' },
-      { label: 'Customers', path: '/customers' },
-      { label: 'Vendors', path: '/vendors' },
+      { key: 'company', path: '/company' },
+      { key: 'team', path: '/team' },
+      { key: 'customers', path: '/customers' },
+      { key: 'vendors', path: '/vendors' },
     ]
   },
-  { label: 'Catalogs', path: '/catalogs' },
-  { label: 'Brands', path: '/brands' },
-  { label: 'Events', path: '/events' },
-  { label: 'New arrivals', path: '/new-arrivals' },
-  { label: 'Contact', path: '/contact' },
+  { key: 'catalogs', path: '/catalogs' },
+  { key: 'brands', path: '/brands' },
+  { key: 'events', path: '/events' },
+  { key: 'new_arrivals', path: '/new-arrivals' },
+  { key: 'contact', path: '/contact' },
 ];
 
 export const OffcanvasMenu: React.FC<OffcanvasMenuProps> = ({ isOpen, onClose, onCartClick }) => {
+  const { t } = useTranslation();
   const [isPagesOpen, setIsPagesOpen] = useState(false);
 
   const togglePages = () => setIsPagesOpen(!isPagesOpen);
@@ -48,18 +50,18 @@ export const OffcanvasMenu: React.FC<OffcanvasMenuProps> = ({ isOpen, onClose, o
 
   return (
     <div className={`offcanvas${isOpen ? ' offcanvas--open' : ''}`}>
-      <button className="offcanvas-overlay" onClick={onClose} aria-label="Close menu" />
+      <button className="offcanvas-overlay" onClick={onClose} aria-label={t('offcanvas.close_menu')} />
 
       <aside className="offcanvas-panel" aria-hidden={!isOpen}>
         <div className="offcanvas-rail" aria-hidden="true">
-          <button className="rail-close" onClick={onClose} aria-label="Close">
+          <button className="rail-close" onClick={onClose} aria-label={t('offcanvas.close')}>
             <i className="fa-solid fa-xmark" />
           </button>
 
           <div className="rail-icons">
             <button 
               className="rail-icon" 
-              aria-label="Cart"
+              aria-label={t('offcanvas.cart')}
               onClick={() => {
                 onClose();
                 onCartClick();
@@ -68,14 +70,14 @@ export const OffcanvasMenu: React.FC<OffcanvasMenuProps> = ({ isOpen, onClose, o
               <i className="fa-solid fa-cart-shopping" />
               <span className="rail-badge">2</span>
             </button>
-            <button className="rail-icon" aria-label="Swap">
+            <button className="rail-icon" aria-label={t('offcanvas.swap')}>
               <i className="fa-solid fa-right-left" />
               <span className="rail-badge">0</span>
             </button>
             <Link 
               to="/wishlist" 
               className="rail-icon" 
-              aria-label="Wishlist"
+              aria-label={t('offcanvas.wishlist')}
               onClick={onClose}
               style={{ textDecoration: 'none' }}
             >
@@ -85,13 +87,13 @@ export const OffcanvasMenu: React.FC<OffcanvasMenuProps> = ({ isOpen, onClose, o
           </div>
 
           <div className="rail-bottom">
-            <button className="rail-social" aria-label="Facebook">
+            <button className="rail-social" aria-label={t('offcanvas.social.facebook')}>
               <i className="fa-brands fa-facebook-f" />
             </button>
-            <button className="rail-social" aria-label="Instagram">
+            <button className="rail-social" aria-label={t('offcanvas.social.instagram')}>
               <i className="fa-brands fa-instagram" />
             </button>
-            <button className="rail-social" aria-label="TikTok">
+            <button className="rail-social" aria-label={t('offcanvas.social.tiktok')}>
               <i className="fa-brands fa-tiktok" />
             </button>
           </div>
@@ -100,23 +102,23 @@ export const OffcanvasMenu: React.FC<OffcanvasMenuProps> = ({ isOpen, onClose, o
         <div className="offcanvas-content">
           <div className="offcanvas-top">
             <div className="offcanvas-search">
-              <input className="offcanvas-search-input" placeholder="Type Your Products ..." />
-              <button className="offcanvas-search-btn" aria-label="Search">
+              <input className="offcanvas-search-input" placeholder={t('offcanvas.type_products')} />
+              <button className="offcanvas-search-btn" aria-label={t('offcanvas.search')}>
                 <i className="fa-solid fa-magnifying-glass" />
               </button>
             </div>
           </div>
 
-          <nav className="offcanvas-nav" aria-label="Menu">
+          <nav className="offcanvas-nav" aria-label={t('offcanvas.menu')}>
             {MENU_ITEMS.map((item) => (
-              <div key={item.label} className="offcanvas-nav-group">
+              <div key={item.key} className="offcanvas-nav-group">
                 <div className="offcanvas-nav-row">
                   {item.path === '#' ? (
                     <button 
                       className="offcanvas-nav-item" 
-                      onClick={item.label === 'Pages' ? togglePages : undefined}
+                      onClick={item.key === 'pages' ? togglePages : undefined}
                     >
-                      {item.label}
+                      {t(`nav.${item.key}`)}
                     </button>
                   ) : (
                     <Link 
@@ -125,29 +127,29 @@ export const OffcanvasMenu: React.FC<OffcanvasMenuProps> = ({ isOpen, onClose, o
                       onClick={onClose}
                       style={{ textDecoration: 'none' }}
                     >
-                      {item.label}
+                      {t(`nav.${item.key}`)}
                     </Link>
                   )}
-                  {item.label === 'Pages' && (
+                  {item.key === 'pages' && (
                     <button 
                       className={`offcanvas-nav-toggle ${isPagesOpen ? 'offcanvas-nav-toggle--open' : ''}`}
                       onClick={togglePages}
-                      aria-label={`${isPagesOpen ? 'Collapse' : 'Expand'} ${item.label}`}
+                      aria-label={`${isPagesOpen ? t('offcanvas.collapse') : t('offcanvas.expand')} ${t(`nav.${item.key}`)}`}
                     >
                       <i className={`fa-solid ${isPagesOpen ? 'fa-minus' : 'fa-plus'}`} />
                     </button>
                   )}
                 </div>
-                {item.label === 'Pages' && item.children && (
+                {item.key === 'pages' && item.children && (
                   <div className={`offcanvas-submenu ${isPagesOpen ? 'offcanvas-submenu--open' : ''}`}>
                     {item.children.map((child) => (
                       <Link
-                        key={child.label}
+                        key={child.key}
                         to={child.path}
                         className="offcanvas-submenu-item"
                         onClick={onClose}
                       >
-                        {child.label}
+                        {t(`nav.${child.key}`)}
                       </Link>
                     ))}
                   </div>
@@ -157,10 +159,10 @@ export const OffcanvasMenu: React.FC<OffcanvasMenuProps> = ({ isOpen, onClose, o
           </nav>
 
           <div className="offcanvas-footer">
-            <div className="offcanvas-footer-line">19.02.2026</div>
-            <div className="offcanvas-footer-line">23/A Mark Street Road, Newyork City</div>
-            <div className="offcanvas-footer-line">info@zillystore.com</div>
-            <div className="offcanvas-footer-line">+9888-256-666</div>
+            <div className="offcanvas-footer-line">262 rue des Bouleaux, 59860</div>
+            <div className="offcanvas-footer-line">Bruay-sur-l’Escaut, France</div>
+            <div className="offcanvas-footer-line">contact@snfood.fr</div>
+            <div className="offcanvas-footer-line">{t('offcanvas.wholesale')}</div>
           </div>
         </div>
       </aside>
